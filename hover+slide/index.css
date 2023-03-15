@@ -1,0 +1,33 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+.content{width: 800px; position: relative;top: 50%;height: 300px; left: 50%; transform: translate(-50%, -50%);overflow: hidden;}
+    .content .item{ animation: slide infinite 12s; position: relative; top: 0;right: 0; width: 400px; height: 300px;padding: 20px;}
+        .content .item > div{width: 380px; height: 100%;}
+        .content .item > div:hover .back{opacity: 1; width: 380px; height: 100%;}
+        .content .item div div {width: 380px; height: 100%; position: absolute;background-color: rgba(89, 87, 87, 0.516);font-size: .9em; color: white;padding: 20px;}
+        .back{opacity: 0; transition: all 1s;}
+        
+/* 이미지 설정 */
+.item1{background: url(./img/1.jpg); background-size: cover;}
+.item2{background: url(./img/2.jpg); background-size: cover;}
+.item3{background: url(./img/3.jpg); background-size: cover;}
+.item4{background: url(./img/4.jpg); background-size: cover;}
+
+/* 슬라이드 */
+@keyframes slide{
+    0% { right: 0;}
+    21% { right: 0;}
+    25% { right: 400px;}
+    46% { right: 400px;}
+    50% { right: 800px;}
+    71% { right: 800px;}
+    75% { right: 1200px;}
+    96% { right: 1200px;}
+    100% { right: 1600px;}
+}

@@ -1,0 +1,56 @@
+*{box-sizing: border-box; margin: 0; padding: 0;}
+input{display: none;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+section {width: 70%; height: 800px;position: relative; left: 50%; transform: translateX(-50%); margin-top: 100px;} 
+.pie{width: 500px; height: 500px;overflow: hidden; background-color: white; box-shadow: 0px 0px 20px rgba(222, 221, 221, 0.474); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.pie > div{position: absolute; top: 0; left: 0;}
+.pie .front {width: 100%; height: 100%;}
+.pie .front > div{width: 100%; height: 50%;}
+.pie .front div > div{width: 50%; height: 100%;position: relative; text-align: center;}
+.pie .front div > div p{position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+.pie .back{width: 100%; height: 100%;}
+.pie .back > div{width: 100%; height: 50%;}
+.pie .back div > div{width: 60%; height: 110%;}
+
+input[id="check1"]:checked ~ .pie .back{animation: spin1 .5s forwards;}
+input[id="check2"]:checked ~ .pie .back{animation: spin2 .5s forwards;}
+input[id="check3"]:checked ~ .pie .back{animation: spin3 .5s forwards;}
+input[id="check4"]:checked ~ .pie .back{animation: spin4 .5s forwards;}
+
+.btn {width: 100px;overflow: hidden; height: 100px; top: 50% !important; left: 50% !important;transform: translate(-50%, -50%);border-radius: 50%;background-color: rgb(110, 107, 107);}
+.btn img{width: 50%; height: 50%;position: absolute; top: 28%; left: 28%; animation: scale 3s infinite;}
+.btn label{z-index: 1;background-color: none; width: 100%; height: 100%; display: block;position: absolute;top: 50%; left: 50%; transform:translate(-50%, -50%);}
+input[id="check1"]:checked ~ .pie .btn label[for="check2"]{z-index: 5;}
+input[id="check2"]:checked ~ .pie .btn label[for="check3"]{z-index: 5;}
+input[id="check3"]:checked ~ .pie .btn label[for="check4"]{z-index: 5;}
+input[id="check4"]:checked ~ .pie .btn label[for="check1"]{z-index: 5;}
+
+@keyframes spin1 {
+    0%  {transform: rotate(270deg);}
+    100%{transform: rotate(360deg);}
+}
+@keyframes spin2 {
+    0%  {transform: rotate(0deg);  }
+    100%{transform: rotate(90deg); }
+}
+@keyframes spin3 {
+    0%  {transform: rotate(90deg); }
+    100%{transform: rotate(180deg);}
+}
+@keyframes spin4 {
+    0%  {transform: rotate(180deg);}
+    100%{transform: rotate(270deg);}
+}
+@keyframes scale {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.3);}
+    100%{transform: scale(1);}
+}
+.iteamNone{background-color: rgb(25, 25, 25);}

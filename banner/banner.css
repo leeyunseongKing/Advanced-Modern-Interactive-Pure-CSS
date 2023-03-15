@@ -1,0 +1,100 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+section{position: relative;}
+.content{ width: 1000px;height: 100px;overflow: hidden; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.moveContent{position: relative;top: 0;right: 0; animation: banner 20s infinite;}
+.moveContent img{width: 200px;transform: scale(1.2);}
+@keyframes banner {
+    0%  {right: 0px;}
+    10% {right: 0px;}
+    20% {right: 200px;}
+    30% {right: 200px;}
+    40% {right: 400px;}
+    50% {right: 400px;}
+    60% {right: 600px;}
+    70% {right: 600px;}
+    80% {right: 800px;}
+    90% {right: 800px;}
+    100%{right: 1000px;}
+}
+.img1{animation: img-move1 20s infinite;}
+.img2{animation: img-move2 20s infinite;}
+.img3{animation: img-move3 20s infinite;}
+.img4{animation: img-move4 20s infinite;}
+.img5{animation: img-move5 20s infinite;}
+@keyframes img-move1 {
+    0%  {transform: scale(1.2);}
+    20% {transform: scale(1.2);}
+    40% {transform: scale(1.2);}
+    60% {transform: scale(1.2);}
+    70% {transform: scale(1.5);}
+    80% {transform: scale(2);}
+    100%{transform: scale(1.2);}
+}
+@keyframes img-move2 {
+    0%  {transform: scale(2);}
+    20% {transform: scale(1.2);}
+    40% {transform: scale(1.2);}
+    60% {transform: scale(1.2);}
+    80% {transform: scale(1.2);}
+    90%{transform: scale(1.5);}
+    100%{transform: scale(2);}
+}
+@keyframes img-move3 {
+    0%  {transform: scale(1.2);}
+    10% {transform: scale(1.5);}
+    20% {transform: scale(2);}
+    40% {transform: scale(1.2);}
+    60% {transform: scale(1.2);}
+    80% {transform: scale(1.2);}
+    100%{transform: scale(1.2);}
+}
+@keyframes img-move4 {
+    0%  {transform: scale(1.2);}
+    20% {transform: scale(1.2);}
+    30% {transform: scale(1.5);}
+    40% {transform: scale(2);}
+    60% {transform: scale(1.2);}
+    80% {transform: scale(1.2);}
+    100%{transform: scale(1.2);}
+}
+@keyframes img-move5 {
+    0%  {transform: scale(1.2);}
+    20% {transform: scale(1.2);}
+    40% {transform: scale(1.2);}
+    50% {transform: scale(1.5);}
+    60% {transform: scale(2);}
+    80% {transform: scale(1.2);}
+    100%{transform: scale(1.2);}
+}
+
+/* @keyframes banner{
+    0%  {right: 0px;}
+    5%  {right: 0px;}
+    10% {right: 100px;}
+    15% {right: 100px;}
+    20% {right: 200px;}
+    25% {right: 200px;}
+    30% {right: 300px;}
+    35% {right: 300px;}
+    40% {right: 400px;}
+    45% {right: 400px;}
+    50% {right: 500px;}
+    55% {right: 500px;}
+    60% {right: 600px;}
+    65% {right: 600px;}
+    70% {right: 700px;}
+    75% {right: 700px;}
+    80% {right: 800px;}
+    85% {right: 800px;}
+    90% {right: 900px;}
+    95% {right: 900px;}
+    100%{right: 1000px;}
+    100%{right: 1000px;}
+} */

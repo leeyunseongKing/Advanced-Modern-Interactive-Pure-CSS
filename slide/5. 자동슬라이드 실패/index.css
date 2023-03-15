@@ -1,0 +1,76 @@
+*{box-sizing: border-box; padding: 0; margin: 0;}
+button{background: inherit; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible;}
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+.f, .fc, .fb{display: flex;}
+.fc	{justify-content: center;}
+.fb {justify-content: space-between;}
+.Raleway-regular{font-family: "Raleway",sans-serif; font-weight: 400;}
+.Raleway-medium{font-family: "Raleway",sans-serif; font-weight: 500;}
+.Raleway-extrabold{font-family: "Raleway",sans-serif; font-weight: 500;}
+.Montserrat-light{font-family: "Montserrat", sans-serif; font-weight: 300;}
+.Raleway-SemiBold{font-family: "Raleway",sans-serif; font-weight: 600;}
+
+
+/*header*/
+header{width: 1110px; height: 130px; position: relative;left: 50%;z-index: 2; transform: translateX(-50%);}
+	.logo{position: absolute; top: 52px; left: 0;}
+	.logo h2{font-size: 34px;color: white;}
+	.nav{position: absolute; top: 62px; right: 0;}
+		.menu{font-size: 14px;color: white;}
+			.menu p{margin-right: 30px;transition: all .5s;}
+			.menu p:hover{color: #c7b299;}
+		.icon{font-size: 18px;width: 65px; color: white;}
+/*visual*/
+.visual{width: 100%; height: 1024px;overflow: hidden; position: absolute; top: 0; left: 0;z-index: 0;}
+	.visual .img{width: calc(100% * 3); height: 100%;position: absolute;top: 0;left: 0;}
+		.visual .img div{width: calc(100% / 3); height: 100%; background-blend-mode: multiply; background-color:rgba(0, 0, 0, 0.614);}
+		.visual_img1{background: url(./img/visual/1.jpg);background-size:cover;}
+		.visual_img2{background: url(./img/visual/2.jpg);background-size:cover;}
+		.visual_img3{background: url(./img/visual/3.jpg);background-size:cover;}
+	.visual .text{ position: absolute; top: 50%; left: 50%;color: white; transform: translate(-50%, -50%);}
+		.visual .text p{text-align: center;}
+		.visual .text p:nth-child(1){font-size: 35px;}
+		.visual .text p:nth-child(2){font-size: 52px;margin-top: 26px;}
+		.visual .text p:nth-child(3){font-size: 16px;width: 510px;position: relative; left: 50%; transform: translateX(-50%);}
+		.visual .text .btn {margin-top: 72px;width: 150px;position: relative; left: 50%;transform: translateX(-50%); height: 53px;font-size: 14px; background-color: #998675;color: white;border-radius: 5px;}
+	.visual .btn-img{position: absolute; left:50%;bottom:130px; transform: translateX(-50%);width: 920px;height: 156px;} 
+		.btn-img label{width: 255px; height: 156px;}
+		.btn-img label img{width: 100%; height: 100%;}
+/* 슬라이드 넘기기 */
+.img{
+	transition: all .5s;
+	animation-delay: 1s;
+	animation-duration:9s;
+	animation-iteration-count: infinite;
+}
+input[id="img1"]:checked ~ .img{left: 0;animation-name: slide1;}
+input[id="img2"]:checked ~ .img{left: -100%;animation-name: slide2;}
+input[id="img3"]:checked ~ .img{left: -200%;animation-name: slide3;}
+@keyframes slide1{
+	0% {left:calc(0 * -100%);}
+	30.333%{left:calc(0 * -100%);}
+	33.333%{left:calc(1 * -100%);}
+	63.666%{left:calc(1 * -100%);}
+	66.666%{left:calc(2 * -100%);}
+	96.999%{left:calc(2 * -100%);}
+	99.999%{left:calc(0 * -100%);}
+}
+@keyframes slide2{
+	0% {left:calc(1 * -100%);}
+	30.333%{left:calc(1 * -100%);}
+	33.333%{left:calc(2 * -100%);}
+	63.666%{left:calc(2 * -100%);}
+	66.666%{left:calc(0 * -100%);}
+	96.999%{left:calc(0 * -100%);}
+	99.999%{left:calc(1 * -100%);}
+}
+@keyframes slide3{
+	0% {left:calc(2 * -100%);}
+	30.333%{left:calc(2 * -100%);}
+	33.333%{left:calc(0 * -100%);}
+	63.666%{left:calc(0 * -100%);}
+	66.666%{left:calc(1 * -100%);}
+	96.999%{left:calc(1 * -100%);}
+	99.999%{left:calc(0 * -100%);}
+}

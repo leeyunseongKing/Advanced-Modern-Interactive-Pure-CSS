@@ -1,0 +1,25 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+.content{position: relative; left: 50%; width: 90%;height: 50%; transform: translateX(-50%);}
+    .content > div{overflow: hidden; width: 25%; height: 100%;transition: all 1s;position: relative; font-size: 0.8em;}
+        .content div div {opacity:0;transition: all 1s; position:absolute;bottom: -200px;width: 100%;height: 20%;color: aliceblue;background-color: rgba(0, 0, 0, 0.553);}
+            .content div div h3{padding: 5px;text-align: center;}
+            .content div div p{padding: 5px;text-align: center;}
+        
+.content1 {background: url(./img/해솔찬정원.jpg); background-size: cover;}
+.content2 {background: url(./img/농부가그린정원.jpg); background-size: cover;}
+.content3 {background: url(./img/사천식물랜드.jpg); background-size: cover;}
+.content4 {background: url(./img/그레이스정원.jpg); background-size: cover;}
+.content5 {background: url(./img/이수미팜베리정원.jpg); background-size: cover;}
+.content div:hover div{bottom: 0px;opacity: 1;}
+.content1:hover {width:90%}
+.content2:hover {width:90%}
+.content3:hover {width:90%}
+.content4:hover {width:90%}
+.content5:hover {width:90%}

@@ -1,0 +1,27 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+.content{position: relative;padding: 30px; box-shadow: 0px 0px 40px rgba(133, 130, 130, 0.342); width: 80%;left: 50%;top:50%;transform: translate(-50%, -50%);}
+    .content div{width:19%;height: 200px;}
+        .content div > div{width: 100%;perspective: 1000px; transform: rotateX(0deg); height: 200px;position: relative; transform-style: preserve-3d;transition: all 1.2s;}
+            .content div div div{width: 100%;height: 100%;position: absolute;backface-visibility: hidden; transition: all 1.2s; transform-style: preserve-3d;}
+            /* 이미지 설정 */
+            .content div:nth-child(1) div .front{background: url(./img/4.jpg);background-size: cover; transform: rotateY(0deg);}
+            .content div:nth-child(2) div .front{background: url(./img/6.jpg);background-size: cover; transform: rotateY(0deg);}
+            .content div:nth-child(3) div .front{background: url(./img/3.jpg);background-size: cover; transform: rotateY(0deg);}
+            .content div:nth-child(4) div .front{background: url(./img/5.jpg);background-size: cover; transform: rotateY(0deg);}
+            .content div:nth-child(5) div .front{background: url(./img/10.jpg);background-size: cover; transform: rotateY(0deg);}
+            /* 반응 */
+            .content div div .back{ transform: rotateY(-180deg); background-color: rgb(98, 95, 95);color: white;}
+            .content div div:hover .front{transform: rotateY(180deg);}
+            .content div div:hover .back{transform: rotateY(0deg);}
+            /* back안의 요소들 */
+            .star{font-size: 1.3em; top: 40%; left: 5%;position: absolute;color: yellow;height: 40% !important;}
+            .star-tag{position: absolute; top: 30%; left: 5%;}
+            button{position: absolute;bottom: 5%; right: 5%;background-color: white;border: none;}
+            h2{position: absolute; top: 5%; left: 5%;}

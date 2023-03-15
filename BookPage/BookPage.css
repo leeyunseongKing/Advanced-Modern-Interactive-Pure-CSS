@@ -1,0 +1,43 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+input{display: none;}
+.background-right{position: absolute;right: 0%;top: 0%;width: 50%;height: 100vh;background-color: rgb(80, 24, 24);}
+.preserve-3D{perspective: 1000px;transform-style: preserve-3d;}
+
+.content{width: 50%; height: 50%; position: relative; top: 50%; left: 50%;transform: translate(-50%, -50%);}
+    .width{width: 50%; height: 100%;position:absolute;transform-origin: left center;transition: all 2s;}
+    .width div{width: 100%; height: 100%; transition: 2s;position: absolute;backface-visibility: hidden;}
+    .front{background-color: aliceblue;}
+    .front h3{padding: 15px;font-size: 1.2em;}
+    .front p {padding: 15px;}
+    .content .first{z-index: 0; top: 0;right: 50%; }
+        .content .first .front { background:url(./img/식물정원.jpg);background-repeat: no-repeat;background-size: cover;}
+    .content .second{top: 0; left: 50%; z-index: 9; backface-visibility: hidden; transform: rotateY(0deg);}
+    .content .third {top: 0; left: 50%; z-index: 8; backface-visibility: hidden; transform: rotateY(0deg);}   
+    .content .fourth{top: 0; left: 50%; z-index: 7; backface-visibility: hidden; transform: rotateY(0deg);}
+        
+        .content .second .front{ transform: rotateY(0deg);}
+        .content .third  .front{ transform: rotateY(0deg);}
+        .content .fourth .front{ transform: rotateY(0deg);}
+
+        .content .second .back { transform: rotateY(-180deg);background:url(./img/잔디원.png); background-repeat: no-repeat;background-size: cover;}
+        .content .third .back  { transform: rotateY(-180deg);background:url(./img/수생원.png);  background-repeat: no-repeat;background-size: cover;} 
+        .content .fourth .back { transform: rotateY(-180deg);background-color: black;}
+
+input[id="check2"]:checked ~ .content .second { transform: rotateY(-180deg);z-index: 1;}
+input[id="check3"]:checked ~ .content .third  { transform: rotateY(-180deg);z-index: 2;}
+input[id="check4"]:checked ~ .content .fourth { transform: rotateY(-180deg);z-index: 3;}
+
+.backbtn{display: none;position: absolute; right: 4%;bottom: 4%;color: rgb(0, 0, 0); opacity: 0;}
+input[id="check2"]:checked ~ .content .front .back2 {display: block; opacity: 1; transition: all .3s;}
+input[id="check3"]:checked ~ .content .front .back3 {display: block; opacity: 1; transition: all 2s;}
+input[id="check4"]:checked ~ .content .front .back4 {display: block; opacity: 1; transition: all 2s;}
+
+label{position: absolute; right: 4%;bottom: 4%;color: rgb(0, 0, 0);}
+.last{color: white;}

@@ -1,0 +1,85 @@
+.jumpBtn{position: fixed;z-index: 2;transition: all .5s; width: 100px;height: 50px; top: 80%; left: 50%;padding: 3px; transform: translateX(-50%); box-shadow: 0 0 30px rgba(162, 228, 162, 0.381); border-radius: 10px;}
+.jumpBtn label{position: absolute; transform: translateX(-50%);line-height: 40px; width: 100%; height: 100%; z-index: 1; color: white;font-size: 1.2em;font-weight: bold;}
+.jumpBtn label:hover{color: rgb(162, 228, 162);}
+#background:checked ~ section .jumpBtn{background-color: black;} /* white모드 */
+
+.jumpMain{transform: translateZ(-600px) rotateX(336deg) rotateY(23deg) translateX(-50%);width: 100%;height: 100%; position: absolute; left: 50%;transform-style: preserve-3d;}
+.road{ transform: translate(-50%, 40%) rotateX(90deg);overflow: hidden; width: 80%; height: 250px;background-color: rgba(255, 255, 255, 0.508);position: absolute;top: 0%; left: 50%;}
+.road > div{ animation: road 5s linear normal infinite; width: 200%; height: 100%;display: flex;position: absolute;left: 0;}
+/* linear 일정하게 진행 */
+/* reverse 역방향 */
+/* normal 정방향 */
+.road div > div{width: 50%; height: 100%; display: flex;}
+.line1{width: 5%; height: 100%; background-color: rgba(162, 228, 162, 0.453);}
+.line2{width: 5%; height: 100%; background-color: rgb(36, 47, 37);}
+
+/* animation: roll 10s linear infinite; */
+.squsre-roll{
+    animation-delay: 0s, .4s;
+    animation-duration: .5s, .5s;
+    position: absolute; transform: translate(-50%, 12%);width: 200px; height: 200px; transform-style: preserve-3d;top: 0%; left: 50%;
+}
+.square-spin{animation: up3 1s linear infinite; width: 200px; height: 200px;transform-style: preserve-3d;}
+.squsre { width: 200px; height: 200px;animation: roll 4s linear infinite;transform-style: preserve-3d;} 
+.squsre > div {width: 100%; height: 100%; position: absolute;}
+.squsrecolor1{background: linear-gradient(#1de272,rgb(5, 38, 9));}
+.squsrecolor3{background-color: #1de272;}
+.squsrecolor2{background-color: rgb(5, 38, 9)   ;}
+.squsre div:nth-child(1){transform: rotateY(0deg) translateZ(100px);}
+.squsre div:nth-child(2){transform: rotateY(90deg) translateZ(100px);}
+.squsre div:nth-child(3){transform: rotateY(180deg) translateZ(100px);}
+.squsre div:nth-child(4){transform: rotateY(270deg) translateZ(100px);}
+.squsre div:nth-child(5){transform: rotateX(-90deg) translateZ(100px);}
+.squsre div:nth-child(6){transform: rotateX(90deg) translateZ(100px);}
+
+input[id="jump1"]:checked ~ .jumpBtn label[for="jump2"]{animation: delay2 1s forwards; animation-delay: .7s;}
+input[id="jump2"]:checked ~ .jumpBtn label[for="jump1"]{animation: delay1 1s forwards; animation-delay: .7s;}
+input[id="jump1"]:checked ~ .jumpBtn label[for="jump1"]{z-index: 2;}
+input[id="jump2"]:checked ~ .jumpBtn label[for="jump2"]{z-index: 1;}
+input[id="jump1"]:checked ~ div .squsre-roll{animation-name: up2, down2;}
+input[id="jump2"]:checked ~ div .squsre-roll{animation-name: up1, down1;}
+@keyframes up2 {
+    0%  {transform: translate(-50%, 12%);}
+    100%{transform: translate(-50%, -30%);}
+}
+@keyframes down2 {
+    0%  {transform: translate(-50%, -30%);}
+    100%{transform: translate(-50%, 12%);}
+}
+@keyframes up1 {
+    0%  {transform: translate(-50%, 12%);}
+    100%{transform: translate(-50%, -30%);}
+}
+@keyframes down1 {
+    0%  {transform: translate(-50%, -30%);}
+    100%{transform: translate(-50%, 12%);}
+}
+@keyframes delay2 {
+    0%  {z-index: 10;}
+    100%  {z-index: 10;}
+}
+@keyframes delay1 {
+    0%  {z-index: 10;}
+    100%  {z-index: 10;}
+}
+@keyframes road {
+    0%  {left: 0%;}
+    100%{left: -100%;}
+}
+@keyframes roll{
+    0%  {transform: rotateX(360deg);}
+    100%{transform: rotateX(0deg) ;}
+}
+@keyframes up3 {
+    0%  {transform: translateY(-5%)  rotateY(90deg);}
+    30% {transform: translateY(-15%) rotateY(90deg);}
+    60% {transform: translateY(-15%) rotateY(90deg);}
+    100%{transform: translateY(-5%)  rotateY(90deg);}
+}
+@media (max-width: 700px) {
+    header{ width: 400px; height: 50px; display: flex; justify-content: space-between; top: 60% !important; left: 50% !important; transform: translateX(-50%);}
+    header div{text-align: center;}
+}
+@media (max-width: 400px){
+    header{ width: 80%; height: 50px;}
+}

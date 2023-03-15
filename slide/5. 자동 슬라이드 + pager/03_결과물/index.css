@@ -1,0 +1,362 @@
+*{box-sizing: border-box; padding: 0; margin: 0;}
+button{background: inherit; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible;}
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+.f, .fc, .fb{display: flex;}
+.fc	{justify-content: center;}
+.fb {justify-content: space-between;}
+.Raleway-regular{font-family: "Raleway",sans-serif; font-weight: 400;}
+.Raleway-medium{font-family: "Raleway",sans-serif; font-weight: 500;}
+.Raleway-extrabold{font-family: "Raleway",sans-serif; font-weight: 500;}
+.Montserrat-light{font-family: "Montserrat", sans-serif; font-weight: 300;}
+.Raleway-SemiBold{font-family: "Raleway",sans-serif; font-weight: 600;}
+/*header*/
+header{width: 1110px; height: 130px; position: relative;left: 50%;z-index: 2; transform: translateX(-50%);}
+	.logo{position: absolute; top: 52px; left: 0;}
+	.logo h2{font-size: 34px;color: white;}
+	.nav{position: absolute; top: 62px; right: 0;}
+		.menu{font-size: 14px;color: white;}
+			.menu p{margin-right: 30px;transition: all .5s;}
+			.menu p:hover{color: #c7b299;}
+		.icon{font-size: 18px;width: 65px; color: white;}
+/*visual*/
+.visual{width: 100%; height: 1024px;overflow: hidden; position: absolute; top: 0; left: 0;z-index: 0;}
+	.visual .img{width: calc(100% * 3); height: 100%;position: absolute;top: 0;left: 0;}
+		.visual .img div{width: calc(100% / 3); height: 100%; background-blend-mode: multiply; background-color:rgba(0, 0, 0, 0.614);}
+		.visual_img1{background: url(./img/visual/1.jpg);background-size:100% 100%;}
+		.visual_img2{background: url(./img/visual/2.jpg);background-size:100% 100%;}
+		.visual_img3{background: url(./img/visual/3.jpg);background-size:100% 100%;}
+	.visual .text{ position: absolute; top: 50%; left: 50%;color: white; transform: translate(-50%, -50%);}
+		.visual .text p{text-align: center;}
+		.visual .text p:nth-child(1){font-size: 35px;}
+		.visual .text p:nth-child(2){font-size: 52px;margin-top: 26px;}
+		.visual .text p:nth-child(3){font-size: 16px;width: 510px;position: relative; left: 50%; transform: translateX(-50%);}
+		.visual .text .btn {margin-top: 72px;width: 150px;position: relative; left: 50%;transform: translateX(-50%); height: 53px;font-size: 14px; background-color: #998675;color: white;border-radius: 5px;}
+	.visual .btn-img{position: absolute;bottom:130px;width: 100%;height: 156px;} 
+		.btn-img div{width: 255px; height: 156px;position: absolute;}
+        .btn-img div:nth-child(1){left: 24%;}
+        .btn-img div:nth-child(2){left: 50%; transform: translateX(-50%);}
+        .btn-img div:nth-child(3){right: 24%;}
+    		.btn-img div label{position: absolute;top: 0;left: 0; width: 100%; height: 100%;}
+        		.btn-img label img{width: 100%; height: 100%;}
+
+/* label bug */
+    .label-cover{z-index: -1;bottom: 130px;width: 255px; height: 156px;position:absolute;border-radius: 10px;}
+    .label-cover.visual_img1{left: 24%;}
+    .label-cover.visual_img2{left: 50%; transform: translateX(-50%);}
+    .label-cover.visual_img3{right: 24%;}
+
+.visual .label-cover{
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+#v2-1:checked ~ .label-cover.visual_img1{ animation-name: cover-1; }
+#v2-1:checked ~ .label-cover.visual_img2{ animation-name: cover-2; }
+#v2-1:checked ~ .label-cover.visual_img3{ animation-name: cover-3; }
+#v3-1:checked ~ .label-cover.visual_img1{ animation-name: cover-1; }
+#v3-1:checked ~ .label-cover.visual_img2{ animation-name: cover-2; }
+#v3-1:checked ~ .label-cover.visual_img3{ animation-name: cover-3; }
+
+#v1-2:checked ~ .label-cover.visual_img1{ animation-name: cover-3; }
+#v1-2:checked ~ .label-cover.visual_img2{ animation-name: cover-1; }
+#v1-2:checked ~ .label-cover.visual_img3{ animation-name: cover-2; }
+#v3-2:checked ~ .label-cover.visual_img1{ animation-name: cover-3; }
+#v3-2:checked ~ .label-cover.visual_img2{ animation-name: cover-1; }
+#v3-2:checked ~ .label-cover.visual_img3{ animation-name: cover-2; }
+
+#v2-3:checked ~ .label-cover.visual_img1{ animation-name: cover-2; }
+#v2-3:checked ~ .label-cover.visual_img2{ animation-name: cover-3; }
+#v2-3:checked ~ .label-cover.visual_img3{ animation-name: cover-1; }
+#v1-3:checked ~ .label-cover.visual_img1{ animation-name: cover-2; }
+#v1-3:checked ~ .label-cover.visual_img2{ animation-name: cover-3; }
+#v1-3:checked ~ .label-cover.visual_img3{ animation-name: cover-1; }
+
+#v2-1-copy:checked ~ .label-cover.visual_img1{ animation-name: cover-1; }
+#v2-1-copy:checked ~ .label-cover.visual_img2{ animation-name: cover-2; }
+#v2-1-copy:checked ~ .label-cover.visual_img3{ animation-name: cover-3; }
+#v3-1-copy:checked ~ .label-cover.visual_img1{ animation-name: cover-1; }
+#v3-1-copy:checked ~ .label-cover.visual_img2{ animation-name: cover-2; }
+#v3-1-copy:checked ~ .label-cover.visual_img3{ animation-name: cover-3; }
+
+#v1-2-copy:checked ~ .label-cover.visual_img1{ animation-name: cover-3; }
+#v1-2-copy:checked ~ .label-cover.visual_img2{ animation-name: cover-1; }
+#v1-2-copy:checked ~ .label-cover.visual_img3{ animation-name: cover-2; }
+#v3-2-copy:checked ~ .label-cover.visual_img1{ animation-name: cover-3; }
+#v3-2-copy:checked ~ .label-cover.visual_img2{ animation-name: cover-1; }
+#v3-2-copy:checked ~ .label-cover.visual_img3{ animation-name: cover-2; }
+
+#v2-3-copy:checked ~ .label-cover.visual_img1{ animation-name: cover-2; }
+#v2-3-copy:checked ~ .label-cover.visual_img2{ animation-name: cover-3; }
+#v2-3-copy:checked ~ .label-cover.visual_img3{ animation-name: cover-1; }
+#v1-3-copy:checked ~ .label-cover.visual_img1{ animation-name: cover-2; }
+#v1-3-copy:checked ~ .label-cover.visual_img2{ animation-name: cover-3; }
+#v1-3-copy:checked ~ .label-cover.visual_img3{ animation-name: cover-1; }
+
+@keyframes cover-1 {
+    0%  { z-index: -1; }
+    2%  { z-index: 1; }
+    31% { z-index: 1; }
+
+    33% { z-index: -1; }
+    61% { z-index: -1; }
+
+    66% { z-index: -1; }
+    94% { z-index: -1; }
+
+    100%{ z-index: -1; }
+}
+@keyframes cover-2 {
+    0%  { z-index: -1; }
+    27% { z-index: -1; }
+
+    33% { z-index: -1; }
+    35% { z-index: 1; }
+    64% { z-index: 1; }
+
+    66% { z-index: -1; }
+    94% { z-index: -1; }
+
+    100%{ z-index: -1; }
+}
+@keyframes cover-3 {
+    0%  { z-index: -1; }
+    27% { z-index: -1; }
+
+    33% { z-index: -1; }
+    61% { z-index: -1; }
+
+    66% { z-index: -1; }
+    68% { z-index: 1; }
+    98% { z-index: 1; }
+
+    100%{ z-index: -1; }
+}
+/* 슬라이드 넘기기 */
+.img {
+    animation-duration: 9s;
+    animation-delay: calc(-9s + 0.4s);
+    animation-iteration-count: infinite;
+}
+#v3-1:checked ~ .img{ animation-name: move-3-1; }
+#v1-2:checked ~ .img{ animation-name: move-1-2; }
+#v2-3:checked ~ .img { animation-name: move-2-3; }
+   
+#v1-3:checked ~ .img,
+#v2-1:checked ~ .img,
+#v3-2:checked ~ .img {
+    animation-duration: 3.5s, 9s;
+    animation-delay: 0s, 3.5s;
+    animation-iteration-count: 1, infinite;
+}
+#v1-3:checked ~ .img { animation-name: move-1-3-1, move-3-1; }
+#v2-1:checked ~ .img { animation-name: move-2-1-2, move-1-2; }
+#v3-2:checked ~ .img { animation-name: move-3-2-3, move-2-3; }
+
+/* copy  */
+#v3-1-copy:checked ~ .img{ animation-name: move-3-1-copy; }
+#v1-2-copy:checked ~ .img{ animation-name: move-1-2-copy; }
+#v2-3-copy:checked ~ .img { animation-name: move-2-3-copy; }
+   
+#v1-3-copy:checked ~ .img,
+#v2-1-copy:checked ~ .img,
+#v3-2-copy:checked ~ .img {
+    animation-duration: 3.5s, 9s;
+    animation-delay: 0s, 3.5s;
+    animation-iteration-count: 1, infinite;
+}
+#v1-3-copy:checked ~ .img { animation-name: move-1-3-1-copy, move-3-1-copy; }
+#v2-1-copy:checked ~ .img { animation-name: move-2-1-2-copy, move-1-2-copy; }
+#v3-2-copy:checked ~ .img { animation-name: move-3-2-3-copy, move-2-3-copy; }
+
+@keyframes move-1-2 {
+    0%      { left: calc(-100% * 1); }
+  	29.333% { left: calc(-100% * 1); }
+    33.333% { left: calc(-100% * 2); }
+    62.666% { left: calc(-100% * 2); }
+    66.666% { left: calc(-100% * 0); }
+    97%     { left: calc(-100% * 0); }
+    100%    { left: calc(-100% * 1); }
+}
+@keyframes move-2-3 {
+    0%      { left: calc(-100% * 2); }
+    29.333% { left: calc(-100% * 2); }
+    33.333% { left: calc(-100% * 0); }
+    62.666% { left: calc(-100% * 0); }
+    66.666% { left: calc(-100% * 1); }
+    96%     { left: calc(-100% * 1); }
+    100%    { left: calc(-100% * 2); }
+}
+@keyframes move-3-1 {
+    0%      { left: calc(-100% * 0); }
+    29.333% { left: calc(-100% * 0); }
+    33.333% { left: calc(-100% * 1); }
+    62.333% { left: calc(-100% * 1); }
+    66.666% { left: calc(-100% * 2); }
+    96%     { left: calc(-100% * 2); }
+    100%    { left: calc(-100% * 0); }
+}
+@keyframes move-1-2-copy {
+    0%      { left: calc(-100% * 1); }
+  	29.333% { left: calc(-100% * 1); }
+    33.333% { left: calc(-100% * 2); }
+    62.666% { left: calc(-100% * 2); }
+    66.666% { left: calc(-100% * 0); }
+    97%     { left: calc(-100% * 0); }
+    100%    { left: calc(-100% * 1); }
+}
+@keyframes move-2-3-copy {
+    0%      { left: calc(-100% * 2); }
+    29.333% { left: calc(-100% * 2); }
+    33.333% { left: calc(-100% * 0); }
+    62.666% { left: calc(-100% * 0); }
+    66.666% { left: calc(-100% * 1); }
+    96%     { left: calc(-100% * 1); }
+    100%    { left: calc(-100% * 2); }
+}
+@keyframes move-3-1-copy {
+    0%      { left: calc(-100% * 0); }
+    29.333% { left: calc(-100% * 0); }
+    33.333% { left: calc(-100% * 1); }
+    62.333% { left: calc(-100% * 1); }
+    66.666% { left: calc(-100% * 2); }
+    96%     { left: calc(-100% * 2); }
+    100%    { left: calc(-100% * 0); }
+}
+
+@keyframes move-2-1-2 {
+    0%      { left: calc(-100% * 1); }
+    15%     { left: calc(-100% * 0); }
+    85%     { left: calc(-100% * 0); }
+    100%    { left: calc(-100% * 1); }
+}
+@keyframes move-3-2-3 {
+    0%      { left: calc(-100% * 2); }
+    15%     { left: calc(-100% * 1); }
+    85%     { left: calc(-100% * 1); }
+    100%    { left: calc(-100% * 2); }
+}
+@keyframes move-1-3-1 {
+    0%      { left: calc(-100% * 0); }
+    15%     { left: calc(-100% * 2); }
+    85%     { left: calc(-100% * 2); }
+    100%    { left: calc(-100% * 0); }
+}
+@keyframes move-2-1-2-copy {
+    0%      { left: calc(-100% * 1); }
+    15%     { left: calc(-100% * 0); }
+    85%     { left: calc(-100% * 0); }
+    100%    { left: calc(-100% * 1); }
+}
+@keyframes move-3-2-3-copy {
+    0%      { left: calc(-100% * 2); }
+    15%     { left: calc(-100% * 1); }
+    85%     { left: calc(-100% * 1); }
+    100%    { left: calc(-100% * 2); }
+}
+@keyframes move-1-3-1-copy {
+    0%      { left: calc(-100% * 0); }
+    15%  { left: calc(-100% * 2); }
+    85%  { left: calc(-100% * 2); }
+    100%    { left: calc(-100% * 0); }
+}
+
+/* 라벨 띄우기 */
+.btn-img div label{
+	animation-duration:9s;
+	animation-iteration-count: infinite;
+}	
+#v1-2:checked ~ .btn-img div .label1{animation-name:label3;}
+#v1-2:checked ~ .btn-img div .label2{animation-name:label1;}
+#v1-2:checked ~ .btn-img div .label3{animation-name:label2;}
+
+#v1-3:checked ~ .btn-img div .label1{animation-name:label2;}
+#v1-3:checked ~ .btn-img div .label2{animation-name:label3;}
+#v1-3:checked ~ .btn-img div .label3{animation-name:label1;}
+
+#v2-1:checked ~ .btn-img div .label1{animation-name:label1;}
+#v2-1:checked ~ .btn-img div .label2{animation-name:label2;}
+#v2-1:checked ~ .btn-img div .label3{animation-name:label3;}
+
+#v2-3:checked ~ .btn-img div .label1{animation-name:label2;}
+#v2-3:checked ~ .btn-img div .label2{animation-name:label3;}
+#v2-3:checked ~ .btn-img div .label3{animation-name:label1;}
+
+#v3-1:checked ~ .btn-img div .label1{animation-name:label1;}
+#v3-1:checked ~ .btn-img div .label2{animation-name:label2;}
+#v3-1:checked ~ .btn-img div .label3{animation-name:label3;}
+
+#v3-2:checked ~ .btn-img div .label1{animation-name:label3;}
+#v3-2:checked ~ .btn-img div .label2{animation-name:label1;}
+#v3-2:checked ~ .btn-img div .label3{animation-name:label2;}
+
+#v1-2:checked ~ .btn-img div .label1-copy{animation-name:label3;}
+#v1-2:checked ~ .btn-img div .label2-copy{animation-name:label1;}
+#v1-2:checked ~ .btn-img div .label3-copy{animation-name:label2;}
+
+#v1-3:checked ~ .btn-img div .label1-copy{animation-name:label2;}
+#v1-3:checked ~ .btn-img div .label2-copy{animation-name:label3;}
+#v1-3:checked ~ .btn-img div .label3-copy{animation-name:label1;}
+
+#v2-1:checked ~ .btn-img div .label1-copy{animation-name:label1;}
+#v2-1:checked ~ .btn-img div .label2-copy{animation-name:label2;}
+#v2-1:checked ~ .btn-img div .label3-copy{animation-name:label3;}
+
+#v2-3:checked ~ .btn-img div .label1-copy{animation-name:label2;}
+#v2-3:checked ~ .btn-img div .label2-copy{animation-name:label3;}
+#v2-3:checked ~ .btn-img div .label3-copy{animation-name:label1;}
+
+#v3-1:checked ~ .btn-img div .label1-copy{animation-name:label1;}
+#v3-1:checked ~ .btn-img div .label2-copy{animation-name:label2;}
+#v3-1:checked ~ .btn-img div .label3-copy{animation-name:label3;}
+
+#v3-2:checked ~ .btn-img div .label1-copy{animation-name:label3;}
+#v3-2:checked ~ .btn-img div .label2-copy{animation-name:label1;}
+#v3-2:checked ~ .btn-img div .label3-copy{animation-name:label2;}
+
+#v1-2-copy:checked ~ .btn-img div .label1{animation-name:label3;}
+#v1-2-copy:checked ~ .btn-img div .label2{animation-name:label1;}
+#v1-2-copy:checked ~ .btn-img div .label3{animation-name:label2;}
+
+#v1-3-copy:checked ~ .btn-img div .label1{animation-name:label2;}
+#v1-3-copy:checked ~ .btn-img div .label2{animation-name:label3;}
+#v1-3-copy:checked ~ .btn-img div .label3{animation-name:label1;}
+
+#v2-1-copy:checked ~ .btn-img div .label1{animation-name:label1;}
+#v2-1-copy:checked ~ .btn-img div .label2{animation-name:label2;}
+#v2-1-copy:checked ~ .btn-img div .label3{animation-name:label3;}
+
+#v2-3-copy:checked ~ .btn-img div .label1{animation-name:label2;}
+#v2-3-copy:checked ~ .btn-img div .label2{animation-name:label3;}
+#v2-3-copy:checked ~ .btn-img div .label3{animation-name:label1;}
+
+#v3-1-copy:checked ~ .btn-img div .label1{animation-name:label1;}
+#v3-1-copy:checked ~ .btn-img div .label2{animation-name:label2;}
+#v3-1-copy:checked ~ .btn-img div .label3{animation-name:label3;}
+
+#v3-2-copy:checked ~ .btn-img div .label1{animation-name:label3;}
+#v3-2-copy:checked ~ .btn-img div .label2{animation-name:label1;}
+#v3-2-copy:checked ~ .btn-img div .label3{animation-name:label2;}
+@keyframes label1{
+	0%     {z-index: 3;}
+	30.333%{z-index: 3;}
+	33.333%{z-index: 1;}
+	63.666%{z-index: 1;}
+	66.666%{z-index: 1;}
+	97%    {z-index: 3;}
+	100%   {z-index: 3;}
+}
+@keyframes label2{
+	0%     {z-index: 1;}
+	30.333%{z-index: 1;}
+	33.333%{z-index: 3;}
+	63.666%{z-index: 3;}
+	66.666%{z-index: 1;}
+	100%   {z-index: 1;}
+}
+@keyframes label3{
+	0%     {z-index: 1;}
+	63.666%{z-index: 1;}
+	66.666%{z-index: 3;}
+	97%    {z-index: 3;}
+	100%   {z-index: 1;}
+}

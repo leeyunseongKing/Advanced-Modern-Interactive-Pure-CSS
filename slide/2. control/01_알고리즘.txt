@@ -1,0 +1,8 @@
+img1을 클릭했을 때는 left  = img3 을 배치 시킨다.
+			    right = img2
+img2을 클릭했을 때는 left  = img1 을 배치 시킨다.
+			    right = img3
+img3을 클릭했을 때는 left  = img2 을 배치 시킨다.
+			    right = img1
+
+위에 처럼 img1,2,3를 만들어서 check 했을 때 슬라이드 효과를 하나씩 넣어준다.

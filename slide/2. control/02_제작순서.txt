@@ -1,0 +1,7 @@
+label은 content에서 150px 만큼 떨어진 곳에서 만들어 진다.
+label의 버튼 크기는 width가 40px이다.
+(150*2 + 40*2) + 1110px로 arrow의 widht를 잡는다.
+arrow에 .fb를 통해서 arrow들을 배치한다.
+input:checked를 활용해서 css 작업을 한다.
+슬라이드 넘기는것 구현
+label 계속해서 바꾸어 주는것 구현

@@ -1,0 +1,230 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+input{display: none;}
+
+.title  { padding: 10px; font-size: 2em;top: 10px; position: relative; width: 80%; left: 50%; transform: translateX(-50%);border-bottom: 2px solid black;}
+.content{ position: relative;margin-top: 40px; width: 80%;height: 75%; left: 50%; transform: translateX(-50%);}
+/* map */
+    .map {position: relative; width: 49%; height: 100%;}
+        .map img  {width: 100%; height: 100%;position: absolute;top: 0%; left: 0%;}
+        .map label{position: absolute;text-align: center; color: rgb(7, 73, 51);width: 45px; font-size: 2rem; font-weight: bold;}
+        .map label:nth-child(1){top: 28.4%; left: 24.7%;z-index: 1;}
+        .map label:nth-child(2){top: 35.6%; left: 54.7%;z-index: 1;}
+        .map label:nth-child(3){top: 52.5%; left: 13%;z-index: 1;}
+        .map label:nth-child(4){top: 55%; left: 68.9%;z-index: 1;}
+        .map label:nth-child(5){top: 66.5%; left: 49%;z-index: 1;}
+/* item */
+    .items {position: relative;top: 0; right: 0; width: 40%;height: 650px; overflow: hidden;}
+        .items > div{position: absolute; transition: all 1s;right: 0%; width: 0%;opacity: 0; background-color: rgb(255, 255, 255); padding: 30px;height: 650px; border: 1px solid black;z-index: 1;}
+            .items div h3{font-size: 1.7em;width: 485px; border-bottom: 2px solid black; padding-bottom : 5px;}
+            .items .location{color: rgba(43, 42, 42, 0.799);width: 485px; margin-top: 8px;margin-bottom: 20px;}
+            .items .checks  {width: 330px;margin-bottom: 30px; transform: translateX(15%);}
+                .items .checks label{ transition: all 0.5s;font-weight:100;}
+            .items .graph{ position: relative;margin-bottom: 20px; width: 100%; height: 250px;}
+            .items .menu { width: 400px; margin-bottom: 20px;}
+            .items .intro{font-size: .8em;}
+/* 그래프 설정 */
+    .graph > div{ position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);opacity: 0%;}
+    .graph .graph1{width: 55%; height: 250px; border-radius: 50%;}
+    .graph .graph2{width: 100%; height: 200px;}
+    .graph .graph3{ width: 100%; height: 200px;}
+    /* 막대그래프 설정 */
+        .graph .graph2 div{transition: all 1s;}
+        .graph2 div{position: absolute;height: 40px;left: 0; width: 5%;}
+        .graph2 div:nth-child(1){top: 0%;background-color: #ccc;}
+        .graph2 div:nth-child(2){top: 50%; transform: translateY(-50%);background-color: rgb(51, 50, 50);}
+        .graph2 div:nth-child(3){bottom: 0%; background-color: rgb(190, 186, 186);}
+    /* 꺽은선 그래프 */
+        .graph3 .dot{position: absolute; width: 10px; height: 10px; border-radius: 50%; background-color: black;}
+        .graph3 .dot1{bottom: 0%; left: 0%;transform: translateX(-100%);}
+        .graph3 .dot2{bottom: 0%; right: 66%;}
+        .graph3 .dot3{bottom: 0%; left: 66%;}
+        .graph3 .dot4{bottom: 0%; right: 0%;transform: translateX(100%);}
+        .graph3 .line{width: 31%;bottom: 0; height: 1%;overflow: hidden;position: absolute;}
+        .graph3 .line1{left: .5%;  background: linear-gradient(to left bottom,#fff calc(50% - 1px),black,#fff calc(50% + 1px)) !important;}
+        .graph3 .line2{left: 34.5%;background: linear-gradient(to right bottom,#fff calc(50% - 1px),black,#fff calc(50% + 1px)) !important;}
+        .graph3 .line3{left: 68.5%;background: linear-gradient(to left bottom,#fff calc(50% - 1px),black,#fff calc(50% + 1px)) !important;}
+
+
+/* 꺽은선 그래프 실행 */
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3{opacity: 1;}
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3{opacity: 1;}
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3{opacity: 1;}
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3{opacity: 1;}
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3{opacity: 1;}
+
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .dot1{animation: dot1 1s both;}
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .dot2{animation: dot2 1s both;}
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .dot3{animation: dot3 1s both;}
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .dot4{animation: dot4 1s both;}
+
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .dot1{animation: dot1 1s both;}
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .dot2{animation: dot2 1s both;}
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .dot3{animation: dot3 1s both;}
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .dot4{animation: dot4 1s both;}
+
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .dot1{animation: dot1 1s both;}
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .dot2{animation: dot2 1s both;}
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .dot3{animation: dot3 1s both;}
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .dot4{animation: dot4 1s both;}
+
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .dot1{animation: dot1 1s both;}
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .dot2{animation: dot2 1s both;}
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .dot3{animation: dot3 1s both;}
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .dot4{animation: dot4 1s both;}
+
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .dot1{animation: dot1 1s both;}
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .dot2{animation: dot2 1s both;}
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .dot3{animation: dot3 1s both;}
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .dot4{animation: dot4 1s both;}
+
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .line1{animation: line1 1s both;}
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .line2{animation: line2 1s both;}
+input[id="how1-3"]:checked ~ .content .items .item1 .graph .graph3 .line3{animation: line3 1s both;}
+
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .line1{animation: line1 1s both;}
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .line2{animation: line2 1s both;}
+input[id="how2-3"]:checked ~ .content .items .item2 .graph .graph3 .line3{animation: line3 1s both;}
+
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .line1{animation: line1 1s both;}
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .line2{animation: line2 1s both;}
+input[id="how3-3"]:checked ~ .content .items .item3 .graph .graph3 .line3{animation: line3 1s both;}
+
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .line1{animation: line1 1s both;}
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .line2{animation: line2 1s both;}
+input[id="how4-3"]:checked ~ .content .items .item4 .graph .graph3 .line3{animation: line3 1s both;}
+
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .line1{animation: line1 1s both;}
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .line2{animation: line2 1s both;}
+input[id="how5-3"]:checked ~ .content .items .item5 .graph .graph3 .line3{animation: line3 1s both;}
+/* 원 그래프 실행 */
+input[id="how1-1"]:checked ~ .content .items .item1 .graph .graph1{animation: pie 0.5s both; opacity: 1;}
+input[id="how2-1"]:checked ~ .content .items .item2 .graph .graph1{animation: pie 0.5s both; opacity: 1;}
+input[id="how3-1"]:checked ~ .content .items .item3 .graph .graph1{animation: pie 0.5s both; opacity: 1;}
+input[id="how4-1"]:checked ~ .content .items .item4 .graph .graph1{animation: pie 0.5s both; opacity: 1;}
+input[id="how5-1"]:checked ~ .content .items .item5 .graph .graph1{animation: pie 0.5s both; opacity: 1;}
+
+/* 막대그래프 실행 */
+input[id="how1-2"]:checked ~ .content .items .item1 .graph .graph2{opacity: 1;}
+input[id="how2-2"]:checked ~ .content .items .item2 .graph .graph2{opacity: 1;}
+input[id="how3-2"]:checked ~ .content .items .item3 .graph .graph2{opacity: 1;}
+input[id="how4-2"]:checked ~ .content .items .item4 .graph .graph2{opacity: 1;}
+input[id="how5-2"]:checked ~ .content .items .item5 .graph .graph2{opacity: 1;}
+
+input[id="how1-2"]:checked ~ .content .items .item1 .graph .graph2 div:nth-child(1){animation: stick1 0.5s both;}
+input[id="how1-2"]:checked ~ .content .items .item1 .graph .graph2 div:nth-child(2){animation: stick2 0.5s both;}
+input[id="how1-2"]:checked ~ .content .items .item1 .graph .graph2 div:nth-child(3){animation: stick3 0.5s both;}
+input[id="how2-2"]:checked ~ .content .items .item2 .graph .graph2 div:nth-child(1){animation: stick1 0.5s both;}
+input[id="how2-2"]:checked ~ .content .items .item2 .graph .graph2 div:nth-child(2){animation: stick2 0.5s both;}
+input[id="how2-2"]:checked ~ .content .items .item2 .graph .graph2 div:nth-child(3){animation: stick3 0.5s both;}
+input[id="how3-2"]:checked ~ .content .items .item3 .graph .graph2 div:nth-child(1){animation: stick1 0.5s both;}
+input[id="how3-2"]:checked ~ .content .items .item3 .graph .graph2 div:nth-child(2){animation: stick2 0.5s both;}
+input[id="how3-2"]:checked ~ .content .items .item3 .graph .graph2 div:nth-child(3){animation: stick3 0.5s both;}
+input[id="how4-2"]:checked ~ .content .items .item4 .graph .graph2 div:nth-child(1){animation: stick1 0.5s both;}
+input[id="how4-2"]:checked ~ .content .items .item4 .graph .graph2 div:nth-child(2){animation: stick2 0.5s both;}
+input[id="how4-2"]:checked ~ .content .items .item4 .graph .graph2 div:nth-child(3){animation: stick3 0.5s both;}
+input[id="how5-2"]:checked ~ .content .items .item5 .graph .graph2 div:nth-child(1){animation: stick1 0.5s both;}
+input[id="how5-2"]:checked ~ .content .items .item5 .graph .graph2 div:nth-child(2){animation: stick2 0.5s both;}
+input[id="how5-2"]:checked ~ .content .items .item5 .graph .graph2 div:nth-child(3){animation: stick3 0.5s both;}
+
+/* 원그래프 그리기 */
+@keyframes pie{
+    0%  {background : conic-gradient(#ccc 0% 0%,  #ffffff 0% 100%);}
+    3%  {background : conic-gradient(#ccc 0% 3%,  #ffffff 0% 100%)}
+    6%  {background : conic-gradient(#ccc 0% 6%,  #ffffff 0% 100%)}
+    12% {background : conic-gradient(#ccc 0% 12%, #ffffff 0% 100%)}
+    18% {background : conic-gradient(#ccc 0% 18%, #ffffff 0% 100%)}
+    25% {background : conic-gradient(#ccc 0% 25%, #ffffff 0% 100%)}
+    33% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 33%, #ffffff 0% 100%)}
+    38% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 38%, #ffffff 0% 100%)}
+    44% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 44%, #ffffff 0% 100%)}
+    50% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 50%, #ffffff 0% 100%)}
+    53% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 53%, #ffffff 0% 100%)}
+    55% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 597, #ffffff 0% 100%)}
+    62% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 62%, #ffffff 0% 100%)}
+    65% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 65%, #ffffff 0% 100%)}
+    68% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 68%, #ffffff 0% 100%)}
+    71% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 71%, #ffffff 0% 100%)}
+    75% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 75%, #ffffff 0% 100%)}
+    82% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 82%, #ffffff 0% 100%)}
+    85% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 85%, #ffffff 0% 100%)}
+    88% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 88%, #ffffff 0% 100%)}
+    91% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 91%, #ffffff 0% 100%)}
+    94% {background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 94%, #ffffff 0% 100%)}
+    100%{background : conic-gradient(#ccc 0% 25%, rgb(51, 50, 50) 25% 55%, rgb(190, 186, 186) 55% 100% );}
+}
+/* 막대그래프 그리기 */
+@keyframes stick1{
+    0%  {width: 5%;}
+    100%{width: 60%;}
+}
+@keyframes stick2{
+    0%  {width: 5%;}
+    100%{width: 80%;}
+}
+@keyframes stick3{
+    0%  {width: 5%;}
+    100%{width: 70%;}
+}
+/* 꺽은선 그래프 */
+@keyframes dot1 {
+    0%  {bottom: 0%;}
+    100%{bottom: 70%;}
+}
+@keyframes dot2 {
+    0%  {bottom: 0%;}
+    100%{bottom: 30%;}
+}
+@keyframes dot3 {
+    0%  {bottom: 0%;}
+    100%{bottom: 80%;}
+}
+@keyframes dot4 {
+    0%  {bottom: 0%;}
+    100%{bottom: 50%;}
+}
+@keyframes line1 {
+    0%  {height: 0%;}
+    100%  {height: 38%; bottom: 33%;}
+}
+@keyframes line2 {
+    0%  {height: 0%;}
+    100%  {height: 50%; bottom: 32%;}
+}
+@keyframes line3 {
+    0%  {height: 0%;}
+    100%  {height: 28%; bottom: 53%;}
+}
+/* item 보여주기 */
+input[id="check1"]:checked ~ .content .items .item1{z-index: 2; width: 100%;opacity: 1;}
+input[id="check2"]:checked ~ .content .items .item2{z-index: 2; width: 100%;opacity: 1;}
+input[id="check3"]:checked ~ .content .items .item3{z-index: 2; width: 100%;opacity: 1;}
+input[id="check4"]:checked ~ .content .items .item4{z-index: 2; width: 100%;opacity: 1;}
+input[id="check5"]:checked ~ .content .items .item5{z-index: 2; width: 100%;opacity: 1;}
+input[id="check1"]:checked ~ .content .map label:nth-child(1){font-weight: bold; color: rgb(136, 142, 19);}
+input[id="check2"]:checked ~ .content .map label:nth-child(2){font-weight: bold; color: rgb(136, 142, 19);}
+input[id="check3"]:checked ~ .content .map label:nth-child(3){font-weight: bold; color: rgb(136, 142, 19);}
+input[id="check4"]:checked ~ .content .map label:nth-child(4){font-weight: bold; color: rgb(136, 142, 19);}
+input[id="check5"]:checked ~ .content .map label:nth-child(5){font-weight: bold; color: rgb(136, 142, 19);}
+
+/* 체크 이팩트 */
+input[id="how5-1"]:checked ~ .content .items .item5 .checks label:nth-child(1){font-weight: bold;}
+input[id="how4-1"]:checked ~ .content .items .item4 .checks label:nth-child(1){font-weight: bold;}
+input[id="how3-1"]:checked ~ .content .items .item3 .checks label:nth-child(1){font-weight: bold;}
+input[id="how2-1"]:checked ~ .content .items .item2 .checks label:nth-child(1){font-weight: bold;}
+input[id="how1-1"]:checked ~ .content .items .item1 .checks label:nth-child(1){font-weight: bold;}
+input[id="how5-2"]:checked ~ .content .items .item5 .checks label:nth-child(2){font-weight: bold;}
+input[id="how4-2"]:checked ~ .content .items .item4 .checks label:nth-child(2){font-weight: bold;}
+input[id="how3-2"]:checked ~ .content .items .item3 .checks label:nth-child(2){font-weight: bold;}
+input[id="how2-2"]:checked ~ .content .items .item2 .checks label:nth-child(2){font-weight: bold;}
+input[id="how1-2"]:checked ~ .content .items .item1 .checks label:nth-child(2){font-weight: bold;}
+input[id="how5-3"]:checked ~ .content .items .item5 .checks label:nth-child(3){font-weight: bold;}
+input[id="how4-3"]:checked ~ .content .items .item4 .checks label:nth-child(3){font-weight: bold;}
+input[id="how3-3"]:checked ~ .content .items .item3 .checks label:nth-child(3){font-weight: bold;}
+input[id="how2-3"]:checked ~ .content .items .item2 .checks label:nth-child(3){font-weight: bold;}
+input[id="how1-3"]:checked ~ .content .items .item1 .checks label:nth-child(3){font-weight: bold;}

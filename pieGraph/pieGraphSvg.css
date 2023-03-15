@@ -1,0 +1,12 @@
+.cir1{width: 500px; height: 500px;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+circle{ transform-origin:50% 50%; transform: rotate(-90deg); overflow: initial;}
+
+#check:checked ~ svg circle{animation: open 1s linear forwards;}
+@keyframes open {
+    0% {
+        stroke-dashoffset :0;
+    }
+    100% {
+        stroke-dashoffset :-1600 ;
+    }
+}

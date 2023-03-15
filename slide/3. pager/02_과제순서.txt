@@ -1,0 +1,6 @@
+visual은 widht: 100%, height: 1024px로 만든다. ( overflow: hidden을 반드시 해야 한다.)
+btn-img의 width는 920px이다.
+btn-img안의 각각의 이미지 크기는 width: 255px, height: 156px이다.
+btn-img에 .fb를 넣어서 정렬을 한다.
+btn-img의 위치는 bottom에서 130px을 띄어서 만들었다.
+띄어둔 이미지를 누르면 반응해서 슬라이드 css 작업을 하였다.

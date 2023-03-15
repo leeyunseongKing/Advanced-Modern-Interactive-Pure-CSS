@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pieGraph.css">
+</head>
+<body>
+    <section style="width: 100%; height:90vh">
+        <input type="radio" name="pie" id="check1" checked>
+        <input type="radio" name="pie" id="check2">
+        <div class="content">
+            <label for="check1">연령별방문객</label>
+            <label for="check2">연령별선호도</label>
+        </div>
+        <div class="item">
+            <div class="pie1 pie"></div>
+            <div class="pie2 pie"></div>
+            <svg class="svgOpen" width="1000" height="1000" viewBox="0 0 1000 1000">
+                <circle
+                class="circleOpen"
+                r="270"
+                cx="500"
+                cy="500"
+                fill="transparent"
+                stroke="white"
+                stroke-width="540"
+                stroke-dasharray="1900"
+                stroke-dashoffset="0";
+                />
+            </svg>
+            <svg class="cir2" width="1000" height="1000" viewBox="0 0 1000 1000">
+                <g class="g1">
+                    <circle
+                    class="cir1-1"
+                    r="250"
+                    cx="1000"
+                    cy="1000"
+                    fill="none"
+                    stroke="red"
+                    stroke-width="500"
+                    stroke-dasharray="calc(40 * calc(2*3.14*250) / 100) calc(2*3.14*250)"
+                    />
+                    <text x="120" y="450" class="text1" font-size="100" fill="black">40%</text>
+                </g>
+                <g class="g2">
+                    <circle
+                    class="cir1-2"
+                    r="250"
+                    cx="1000"
+                    cy="1000"
+                    fill="none"
+                    stroke="green"
+                    stroke-width="500"
+                    stroke-dasharray="calc(30 * calc(2*3.14*250) / 100) calc(2*3.14*250)"
+                    />
+                    <text x="600" y="400" class="text2" font-size="100" fill="black">40%</text>
+                </g>
+                <g class="g3">
+                    <circle
+                    class="cir1-3"
+                    r="250"
+                    cx="1000"
+                    cy="1000"
+                    fill="none"
+                    stroke="blue"
+                    stroke-width="500"
+                    stroke-dasharray="calc(30 * calc(2*3.14*250) / 100) calc(2*3.14*250)"
+                    />
+                    <text x="500" y="800" class="text3" font-size="100" fill="black">30%</text>
+                </g>
+            </svg>
+            <svg class="cir1" width="1000" height="1000" viewBox="0 0 1000 1000">
+                <g class="g1">
+                    <circle
+                    class="cir1-1"
+                    r="250"
+                    cx="1000"
+                    cy="1000"
+                    fill="none"
+                    stroke="red"
+                    stroke-width="500"
+                    stroke-dasharray="calc(40 * calc(2*3.14*250) / 100) calc(2*3.14*250)"
+                    />
+                    <text x="120" y="450" class="text1" font-size="100" fill="black">40%</text>
+                </g>
+                <g class="g2">
+                    <circle
+                    class="cir1-2"
+                    r="250"
+                    cx="1000"
+                    cy="1000"
+                    fill="none"
+                    stroke="green"
+                    stroke-width="500"
+                    stroke-dasharray="calc(20 * calc(2*3.14*250) / 100) calc(2*3.14*250)"
+                    />
+                    <text x="600" y="300" class="text2" font-size="100" fill="black">20%</text>
+                </g>
+                <g class="g3">
+                    <circle
+                    class="cir1-3"
+                    r="250"
+                    cx="1000"
+                    cy="1000"
+                    fill="none"
+                    stroke="blue"
+                    stroke-width="500"
+                    stroke-dasharray="calc(40 * calc(2*3.14*250) / 100) calc(2*3.14*250)"
+                    />
+                    <text x="550" y="800" class="text3" font-size="100" fill="black">40%</text>
+                </g>
+            </svg>
+        </div>
+        <div class="look">
+            <div class="fc">
+                <div class="color1"></div>
+                <p>10대</p>
+            </div>
+            <div class="fc">
+                <div class="color2"></div>
+                <p>20대</p>
+            </div>
+            <div class="fc">
+                <div class="color3"></div>
+                <p>30대</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

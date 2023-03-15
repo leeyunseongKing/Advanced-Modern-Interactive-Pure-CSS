@@ -1,0 +1,5 @@
+header{transition: all .5s; position: fixed; width: 150px; height: 200px; z-index: 10; top: 15%; left: 10%;}
+header div{transition: all .5s;left:0; width: 100%;height: 100%;position: absolute;top: 20%;}
+header a{font-size: 1.3em;display: inline-block; color: white;text-decoration: none;margin: 10px; transition: all 1s;}
+
+#background:checked ~ header div a{color: black;}

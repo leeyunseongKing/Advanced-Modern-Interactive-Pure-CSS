@@ -1,0 +1,25 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+.f, .fc, .fa, .fs, .fe, .fb{display: flex;}
+.fc {justify-content: center;}
+.fa {justify-content: space-around;}
+.fs {justify-content: flex-start;}
+.fe {justify-content: flex-end;}
+.fb {justify-content: space-between;}
+
+.content{width: 50%;position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+    .content>div{width: 100%; position: relative;height: 200px;margin-bottom: 10px;}
+        .content div div{width: 90%; height: 100%; position: relative;}
+            .content div div div{position: absolute; transition: all 1s;}
+            .back{opacity: 0; background-color: rgb(108, 106, 106); padding: 10px;color: white; font-size: .8em;}
+            .content div div:hover .back{opacity: 1;}
+
+/* 이미지 설정 */
+.item1{background: url(./img/1.jpg);background-size: cover;}
+.item2{background: url(./img/2.jpg);background-size: cover;}
+.item3{background: url(./img/3.jpg);background-size: cover;}
+.item4{background: url(./img/4.jpg);background-size: cover;}
+.item5{background: url(./img/5.jpg);background-size: cover;}
+.item6{background: url(./img/6.jpg);background-size: cover;}
+.item7{background: url(./img/7.jpg);background-size: cover;}
+.item8{background: url(./img/8.jpg);background-size: cover;}
+.item9{background: url(./img/9.jpg);background-size: cover;}
